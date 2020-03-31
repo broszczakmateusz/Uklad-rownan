@@ -10,6 +10,7 @@
  *  i jakie ma glowne cechy.
  */
 class Macierz {
+    test
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
