@@ -11,18 +11,21 @@
  */
 class Wektor {
 
-    double dane[ROZMIAR]{};
+    double dane[ROZMIAR];
 
     public:
         Wektor();
         Wektor(double x, double y, double z); //konstruktor od kolekcji
-        double dlugosc() const;
-        double operator * (const Wektor & W2) const;
-        const Wektor & operator + (const Wektor & W2) const;
-        const Wektor & operator - (const Wektor & W2) const;
 
         const double & operator[] (int indeks) const;
         double & operator[] (int indeks);
+
+        const Wektor & operator + ( Wektor & W2) const;
+        const Wektor & operator - ( Wektor & W2) const;
+        double operator * (const Wektor & W2) const;
+
+
+        double dlugosc() const;
     };
 
 /*
@@ -44,4 +47,6 @@ std::istream& operator >> (std::istream & Strm, Wektor & Wek);
 
 std::ostream& operator << (std::ostream & Strm, const Wektor & Wek);
 
+Wektor  operator * ( Wektor W, double liczba)  ;
+Wektor  operator / ( Wektor W, double liczba)  ;
 #endif

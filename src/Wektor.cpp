@@ -49,20 +49,18 @@ std::ostream & operator << (std::ostream &Strm, const Wektor &Wek) {
     }
 }
 
-const Wektor &Wektor::operator+(const Wektor & W2) const {
- Wektor Wynikowy;
+const Wektor & Wektor::operator + ( Wektor & W2) const {
     for (int i = 0; i < ROZMIAR; i++)
-        Wynikowy.dane[i] = dane[i] + W2.dane[i];
+        W2.dane[i] += dane[i];
 
-return Wynikowy;
+return W2;
 }
 
-const Wektor &Wektor::operator-(const Wektor &W2) const {
- Wektor Wynikowy;
+const Wektor & Wektor::operator - ( Wektor &W2) const {
     for (int i = 0; i < ROZMIAR; i++)
-        Wynikowy.dane[i] = dane[i] - W2.dane[i];
+        W2.dane[i] -= dane[i];
 
-return Wynikowy;
+    return W2;
 }
 double Wektor::operator * (const Wektor &W2) const {
     double Wynik = 0;
@@ -70,6 +68,20 @@ double Wektor::operator * (const Wektor &W2) const {
         Wynik += dane[i] * W2.dane[i];
 
     return Wynik;
+}
+
+Wektor operator * ( Wektor &W, double liczba)  {
+    for (int i = 0; i < ROZMIAR; i++)
+        W.dane[i] *= liczba;
+
+    return W;
+}
+
+Wektor operator / ( Wektor &W, double liczba)  {
+    for (int i = 0; i < ROZMIAR; i++)
+        W.dane[i] /= liczba;
+
+    return W;
 }
 
 double Wektor::dlugosc() const {
