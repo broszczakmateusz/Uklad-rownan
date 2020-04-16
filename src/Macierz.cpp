@@ -19,7 +19,7 @@ Macierz::Macierz(Wektor Wie1, Wektor Wie2, Wektor Wie3) {
     Macierz::tab[1] = Wie2;
     Macierz::tab[2] = Wie3;
 }
-
+/*###########################################################*/
 Wektor & Macierz::operator[] (int indeks) {
     if (indeks < 0 || indeks >= ROZMIAR) {
         std::cerr << "blad: zly indeks macierzy";
@@ -37,7 +37,6 @@ const Wektor & Macierz::operator[] (int indeks) const {
 }
 
 std::istream & operator >> (std::istream &Strm, Macierz &Mac) {
-    char t;
     Wektor Wie1, Wie2, Wie3;
     Strm >> Wie1;
     Strm >> Wie2;
@@ -51,4 +50,27 @@ std::ostream& operator << (std::ostream &Strm, const Macierz &Mac) {
         for (int i = 0; i < ROZMIAR; i++) {
             Strm << Mac[i] << std::endl;
         }
+}
+/*###########################################################*/
+
+Macierz Macierz::skopjuj() const {
+    Macierz kopia;
+    /* Utworzenie kopii macierzy*/
+    for (int i = 0; i<ROZMIAR; i++) {
+        kopia.tab[i] = tab[i];
+    }
+    return kopia;
+}
+
+Macierz Macierz::transpozycja() const {
+    Macierz Transponowana, tmp;
+
+    tmp = Macierz::skopjuj();
+
+    for (int i = 0; i<ROZMIAR; i++) {
+        for (int j = 0; j<ROZMIAR; j++) {
+            Transponowana.tab[i][j] = tmp.tab[j][i];
+        }
+    }
+    return Transponowana;
 }

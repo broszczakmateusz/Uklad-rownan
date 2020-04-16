@@ -19,12 +19,17 @@ class Macierz {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
+
   Macierz();
   Macierz(Wektor Wie1, Wektor Wie2, Wektor Wie3);
+
   const Wektor & operator[] (int indeks) const;
   Wektor & operator[] (int indeks);
   const double & operator() (int ind1, int ind2) const {return tab[ind1][ind2]; }
   double & operator() (int ind1, int ind2) {return tab[ind1][ind2]; }
+
+  Macierz skopjuj() const;
+  Macierz transpozycja() const;
 
 };
 
