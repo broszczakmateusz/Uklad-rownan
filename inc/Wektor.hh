@@ -4,7 +4,6 @@
 #include "rozmiar.h"
 #include <iostream>
 
-
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
  *  i jakie ma glowne cechy.
@@ -20,11 +19,12 @@ class Wektor {
         const double & operator[] (int indeks) const;
         double & operator[] (int indeks);
 
-        const Wektor & operator + ( Wektor & W2) const;
-        const Wektor & operator - ( Wektor & W2) const;
+        Wektor operator + (const Wektor & W2) const;
+        Wektor operator - (const Wektor & W2) const;
         double operator * (const Wektor & W2) const;
 
-
+        Wektor  operator * (  double liczba) ;
+        Wektor  operator / (  double liczba) ;
         double dlugosc() const;
     };
 
@@ -47,6 +47,5 @@ std::istream& operator >> (std::istream & Strm, Wektor & Wek);
 
 std::ostream& operator << (std::ostream & Strm, const Wektor & Wek);
 
-Wektor  operator * ( Wektor W, double liczba)  ;
-Wektor  operator / ( Wektor W, double liczba)  ;
+
 #endif

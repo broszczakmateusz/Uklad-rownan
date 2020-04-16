@@ -3,8 +3,6 @@
 #include "Macierz.hh"
 #include "UkladRownanLiniowych.hh"
 
-
-
 using namespace std;
 
 /*
@@ -26,11 +24,9 @@ int main()
 
   cout << endl << " Start programu " << endl << endl;
   //cout << W1 << W2;
-  cout << W1 + W2;
-  cout << W1 - W2;
-  cout << M2;
-
-
+  cout << W1 * W2<<endl;
+  cout << W3*2<<endl;
+  cout << W1.dlugosc()<<endl;
 
   return 0;
 }

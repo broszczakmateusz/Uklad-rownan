@@ -49,19 +49,26 @@ std::ostream & operator << (std::ostream &Strm, const Wektor &Wek) {
     }
 }
 
-const Wektor & Wektor::operator + ( Wektor & W2) const {
+/*###########################################################*/
+/* Suma dwóch wektrów*/
+Wektor Wektor::operator + (const Wektor & W2) const {
+    Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)
-        W2.dane[i] += dane[i];
+        Wynikowy[i] =  dane[i] + W2.dane[i] ;
 
-return W2;
+    return Wynikowy;
 }
 
-const Wektor & Wektor::operator - ( Wektor &W2) const {
+/* Różnica dwóch wektrów*/
+Wektor Wektor::operator - (const Wektor &W2) const {
+    Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)
-        W2.dane[i] -= dane[i];
+        Wynikowy[i] =  dane[i] - W2.dane[i] ;
 
-    return W2;
+    return Wynikowy;
 }
+
+/* Iloczyn skalarny dwóch wektorów*/
 double Wektor::operator * (const Wektor &W2) const {
     double Wynik = 0;
     for (int i = 0; i < ROZMIAR; i++)
@@ -69,26 +76,29 @@ double Wektor::operator * (const Wektor &W2) const {
 
     return Wynik;
 }
-
-Wektor operator * ( Wektor &W, double liczba)  {
+/*###########################################################*/
+/* Iloczyn Wektor * liczba */
+Wektor Wektor::operator * (double liczba)  {
+    Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)
-        W.dane[i] *= liczba;
+        Wynikowy.dane[i] = dane[i] * liczba;
 
-    return W;
+    return Wynikowy;
 }
-
-Wektor operator / ( Wektor &W, double liczba)  {
+/* Iloraz Wektor * liczba */
+Wektor Wektor::operator / (double liczba)  {
+    Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)
-        W.dane[i] /= liczba;
+        Wynikowy.dane[i] = dane[i] / liczba;
 
-    return W;
+    return Wynikowy;
 }
-
+/*###########################################################*/
+/* Metoda licząca długość wektora */
 double Wektor::dlugosc() const {
- double Wynik = 0;
-     for (int i = 0; i < ROZMIAR; i++) {
-       Wynik = Wynik + dane[i] * dane[i];
-    }
+    double Wynik = 0;
+    for (int i = 0; i < ROZMIAR; i++)
+        Wynik = Wynik + dane[i] * dane[i];
+
     return Wynik;
 }
-
