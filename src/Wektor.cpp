@@ -38,9 +38,10 @@ const double & Wektor::operator[] (int indeks) const {
 }
 
 std::istream & operator >> (std::istream & Strm, Wektor &Wek) {
-    double x, y, z;
+    double x=0, y=0, z=0;
     Strm >> x >> y >> z;
-    Wektor( x, y, z);
+    Wektor tmp( x, y, z);
+    Wek = tmp;
 }
 
 std::ostream & operator << (std::ostream &Strm, const Wektor &Wek) {

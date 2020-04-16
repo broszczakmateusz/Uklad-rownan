@@ -22,7 +22,7 @@ Macierz::Macierz(Wektor Wie1, Wektor Wie2, Wektor Wie3) {
 
 Wektor & Macierz::operator[] (int indeks) {
     if (indeks < 0 || indeks >= ROZMIAR) {
-        std::cerr << "blad: zly indeks wektora";
+        std::cerr << "blad: zly indeks macierzy";
         exit(1);
     }
     return this->tab[indeks];
@@ -30,16 +30,25 @@ Wektor & Macierz::operator[] (int indeks) {
 
 const Wektor & Macierz::operator[] (int indeks) const {
     if (indeks < 0 || indeks >= ROZMIAR) {
-        std::cerr << "blad: zly indeks wektora";
+        std::cerr << "blad: zly indeks macierzy";
         exit(1);
     }
     return this->tab[indeks];
 }
 
+std::istream & operator >> (std::istream &Strm, Macierz &Mac) {
+    char t;
+    Wektor Wie1, Wie2, Wie3;
+    Strm >> Wie1;
+    Strm >> Wie2;
+    Strm >> Wie3;
+
+    Macierz tmp( Wie1, Wie2, Wie3);
+    Mac = tmp;
+}
 
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac) {
         for (int i = 0; i < ROZMIAR; i++) {
             Strm << Mac[i] << std::endl;
         }
-    }
-
+}

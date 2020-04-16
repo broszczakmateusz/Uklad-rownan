@@ -35,7 +35,7 @@ class Wektor {
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt 
  */
-std::istream& operator >> (std::istream & Strm, Wektor & Wek);
+std::istream& operator >> (std::istream & Strm, Wektor &Wek);
 
 /*
  * To przeciazenie trzeba opisac. Co ono robi. Jaki format

@@ -18,16 +18,15 @@ int main()
   Wektor W1(1,1,1);
   Wektor W2(2,2,2);
   Wektor W3(2,2,2);
+  Wektor W4;
   Macierz M1(W1,W2,W3);
   Macierz M2;
   //UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
 
   cout << endl << " Start programu " << endl << endl;
   //cout << W1 << W2;
-  cout << W1 * W2<<endl;
-  cout << W3*2<<endl;
-  cout << W1.dlugosc()<<endl;
-
+ cin >> M2;
+ cout << M2;
   return 0;
 }
 
