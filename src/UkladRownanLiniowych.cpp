@@ -11,7 +11,8 @@ std::istream &operator>>(std::istream &Strm, UkladRownanLiniowych &UklRown) {
     Macierz tmpA;
     Wektor tmpb;
 
-    Strm >> tmpA >> tmpb;
+    Strm >> tmpA;
+    Strm >> tmpb;
     UklRown.set_A(tmpA.transpozycja());
     UklRown.set_b(tmpb);
 
@@ -19,7 +20,7 @@ std::istream &operator>>(std::istream &Strm, UkladRownanLiniowych &UklRown) {
 }
 
 std::ostream &operator<<(std::ostream &Strm, const UkladRownanLiniowych &UklRown) {
-    Strm << UklRown.get_A() << UklRown.get_b();
+    Strm << UklRown.get_A().transpozycja() << UklRown.get_b();
 
     return Strm;
 }
@@ -41,4 +42,10 @@ void UkladRownanLiniowych::set_A(const Macierz &AA) {
 void UkladRownanLiniowych::set_b(const Wektor &bb) {
     b=bb;
 }
+
+
 /*###########################################################*/
+
+Wektor UkladRownanLiniowych::Oblicz() const {
+    return Wektor();
+}
