@@ -44,24 +44,27 @@ std::istream & operator >> (std::istream &Strm, Macierz &Mac) {
 
     Macierz tmp( Wie1, Wie2, Wie3);
     Mac = tmp;
+
+    return Strm;
 }
 
 std::ostream& operator << (std::ostream &Strm, const Macierz &Mac) {
         for (int i = 0; i < ROZMIAR; i++) {
             Strm << Mac[i] << std::endl;
         }
+    return Strm;
 }
 /*###########################################################*/
-
+/* Tworzy kopie macierzy*/
 Macierz Macierz::skopjuj() const {
     Macierz kopia;
-    /* Utworzenie kopii macierzy*/
+
     for (int i = 0; i<ROZMIAR; i++) {
         kopia.tab[i] = tab[i];
     }
     return kopia;
 }
-
+/* Transponuje macierz*/
 Macierz Macierz::transpozycja() const {
     Macierz Transponowana, tmp;
 
@@ -73,4 +76,16 @@ Macierz Macierz::transpozycja() const {
         }
     }
     return Transponowana;
+}
+
+/* Iloczyn Macierzy i wektora. Zwraca wektor */
+Wektor Macierz::operator*(const Wektor &W) const {
+    Wektor Wynikowy;
+
+    for (int i = 0; i<ROZMIAR; i++) {
+        for (int j = 0; j<ROZMIAR; j++) {
+            Wynikowy[i] += W[j] * tab[i][j];
+        }
+    }
+    return Wynikowy;
 }

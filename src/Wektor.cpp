@@ -42,12 +42,15 @@ std::istream & operator >> (std::istream & Strm, Wektor &Wek) {
     Strm >> x >> y >> z;
     Wektor tmp( x, y, z);
     Wek = tmp;
+
+    return Strm;
 }
 
 std::ostream & operator << (std::ostream &Strm, const Wektor &Wek) {
     for (int i = 0; i < ROZMIAR; i++) {
         Strm << Wek[i] << " ";
     }
+    return Strm;
 }
 
 /*###########################################################*/
@@ -86,7 +89,7 @@ Wektor Wektor::operator * (double liczba)  {
 
     return Wynikowy;
 }
-/* Iloraz Wektor * liczba */
+/* Iloraz Wektor / liczba */
 Wektor Wektor::operator / (double liczba)  {
     Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)

@@ -1,5 +1,6 @@
 #ifndef MACIERZ_HH
 #define MACIERZ_HH
+
 #include "rozmiar.h"
 #include "Wektor.hh"
 #include <iostream>
@@ -29,8 +30,8 @@ class Macierz {
   double & operator() (int ind1, int ind2) {return tab[ind1][ind2]; }
 
   Macierz skopjuj() const;
-  Macierz transpozycja() const;
-
+  Macierz  transpozycja() const;
+  Wektor  operator * (const Wektor & W) const;
 };
 
 /*
