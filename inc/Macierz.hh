@@ -29,9 +29,14 @@ class Macierz {
   const double & operator() (int ind1, int ind2) const {return tab[ind1][ind2]; }
   double & operator() (int ind1, int ind2) {return tab[ind1][ind2]; }
 
+
+  const Wektor & get_wiersz(int indeks) const;
+  void set_wiersz(int indeks, Wektor &W);
+
   Macierz skopjuj() const;
   Macierz  transpozycja() const;
   Wektor  operator * (const Wektor & W) const;
+  double wyznacznik() const;
 };
 
 /*
