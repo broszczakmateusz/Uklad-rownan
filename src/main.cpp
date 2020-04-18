@@ -15,20 +15,21 @@ using namespace std;
 
 int main()
 {
-  Wektor W1(0,1,9);
-  Wektor W2(0,1,1);
-  Wektor W3(3 ,2,3);
-  Wektor W4(7,4,3);
+
+  Wektor W1(2,1,1);
+  Wektor W2(2,2,3);
+  Wektor W3(1 ,1.5,1);
+  Wektor W4(9,8.5,8);
   Macierz M1(W1,W2,W3);
   Macierz M2;
-  UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
+  UkladRownanLiniowych   UklRown(M1,W4);   // To tylko przykladowe definicje zmiennej
 
   cout << endl << " Start programu " << endl << endl;
   //cout << W1 << W2;
  //cin >> UklRown;
-    cout << M2<<endl;
+    //cout << M2<<endl;
 
- cout << M2.wyznacznik();
+ cout << UklRown.Oblicz();
 
   return 0;
 }

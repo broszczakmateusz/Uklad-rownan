@@ -12,7 +12,7 @@
  */
 class Macierz {
 
-    Wektor tab[ROZMIAR];
+
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
@@ -20,6 +20,8 @@ class Macierz {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
+
+  Wektor tab[ROZMIAR];
 
   Macierz();
   Macierz(Wektor Wie1, Wektor Wie2, Wektor Wie3);
@@ -31,7 +33,7 @@ class Macierz {
 
 
   const Wektor & get_wiersz(int indeks) const;
-  void set_wiersz(int indeks, Wektor &W);
+  void set_wiersz(const Wektor &bb);
 
   Macierz skopjuj() const;
   Macierz  transpozycja() const;

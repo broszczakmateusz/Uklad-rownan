@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Macierz.hh"
-
+#include "Wektor.hh"
 
 
 /*

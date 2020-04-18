@@ -82,7 +82,7 @@ double Wektor::operator * (const Wektor &W2) const {
 }
 /*###########################################################*/
 /* Iloczyn Wektor * liczba */
-Wektor Wektor::operator * (double liczba)  {
+Wektor Wektor::operator * (double liczba)  const {
     Wektor Wynikowy;
     for (int i = 0; i < ROZMIAR; i++)
         Wynikowy.dane[i] = dane[i] * liczba;

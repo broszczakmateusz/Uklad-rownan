@@ -47,5 +47,30 @@ void UkladRownanLiniowych::set_b(const Wektor &bb) {
 /*###########################################################*/
 
 Wektor UkladRownanLiniowych::Oblicz() const {
-    return Wektor();
+    Macierz  tmpA = get_A();
+    Wektor tmpb = get_b();
+
+    for (int i = 0; i < ROZMIAR; i++) {
+        for (int j = i + 1; j < ROZMIAR; j++) {
+            for (int k = 1; k < ROZMIAR; k++) {
+
+                if (tmpA.tab[i][i] == 0) {
+                    if (tmpA.tab[k][i] != 0) {
+                        std::swap(tmpA.tab[i], tmpA.tab[k]);
+                        std::swap(tmpb[i], tmpb[k]);
+
+                        tmpb[j] = tmpb[j] - tmpb[i] * tmpA.tab[j][i] / tmpA.tab[i][i];
+                        tmpA.tab[j] = tmpA.tab[j] - tmpA.tab[i] * tmpA.tab[j][i] / tmpA.tab[i][i];
+                    }
+                } else {
+
+                    tmpb[j] = tmpb[j] - tmpb[i] * tmpA.tab[j][i] / tmpA.tab[i][i];
+                    tmpA.tab[j] = tmpA.tab[j] - tmpA.tab[i] * tmpA.tab[j][i] / tmpA.tab[i][i];
+                    break;
+                }
+            }
+        }
+    }
+
+    return tmpb;
 }

@@ -37,12 +37,12 @@ const Wektor & Macierz::operator[] (int indeks) const {
 }
 
 const Wektor &Macierz::get_wiersz(int indeks) const {
-    return tab[indeks];
+    return this->tab[indeks];
 }
 
-void Macierz::set_wiersz(int indeks, Wektor &W){
-    tab[indeks] = W;
-    //Macierz::get_wiersz(indeks) = nowy;
+void Macierz::set_wiersz(const Wektor &bb){
+   // get_wiersz();
+   // tab = bb;
 }
 
 std::istream & operator >> (std::istream &Strm, Macierz &Mac) {

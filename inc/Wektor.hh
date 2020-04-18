@@ -23,7 +23,7 @@ class Wektor {
         Wektor operator - (const Wektor & W2) const;
         double operator * (const Wektor & W2) const;
 
-        Wektor  operator * (  double liczba) ;
+        Wektor  operator * (  double liczba) const;
         Wektor  operator / (  double liczba) ;
         double dlugosc() const;
     };
