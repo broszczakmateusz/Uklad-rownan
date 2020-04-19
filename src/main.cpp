@@ -24,12 +24,15 @@ int main()
   Macierz M2;
   UkladRownanLiniowych   UklRown(M1,W4);   // To tylko przykladowe definicje zmiennej
 
-  cout << endl << " Start programu " << endl << endl;
+  cout << endl << "Start programu " << endl << endl;
   //cout << W1 << W2;
  //cin >> UklRown;
     //cout << M2<<endl;
 
- cout << UklRown.Oblicz();
+    //cout << UklRown << endl;
+
+    cout << "Rozwiazanie x = (x1, x2, x3):" << endl;
+    cout << UklRown.Oblicz() << endl;
 
   return 0;
 }

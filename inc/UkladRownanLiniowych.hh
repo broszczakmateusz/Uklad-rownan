@@ -14,7 +14,7 @@ class UkladRownanLiniowych {
 
     Macierz A;
     Wektor b;
-
+    Wektor rozwiazanie;
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
@@ -26,8 +26,10 @@ class UkladRownanLiniowych {
     const Wektor & get_b() const;
     void set_A(const Macierz & AA);
     void set_b(const Wektor & bb);
-
+    void set_rozwiazanie(const Wektor & Wynik);
+    const Wektor & get_rozwiazanie() const;
     Wektor Oblicz() const;
+
 };
 
 
