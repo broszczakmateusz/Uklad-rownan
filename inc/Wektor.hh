@@ -3,7 +3,7 @@
 
 #include "rozmiar.h"
 #include <iostream>
-
+#include <math.h>
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
  *  i jakie ma glowne cechy.

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Wektor.hh"
-#include "Macierz.hh"
 #include "UkladRownanLiniowych.hh"
 
 using namespace std;
@@ -14,26 +13,28 @@ using namespace std;
 
 
 int main()
-{
-
-  Wektor W1(2,1,1);
+{/* Wektor W1(2,1,1);
   Wektor W2(2,2,3);
   Wektor W3(1 ,1.5,1);
   Wektor W4(9,8.5,8);
-  Macierz M1(W1,W2,W3);
-  Macierz M2;
-  UkladRownanLiniowych   UklRown(M1,W4);   // To tylko przykladowe definicje zmiennej
+  Macierz M1(W1,W2,W3);*/
 
-  cout << endl << "Start programu " << endl << endl;
-  //cout << W1 << W2;
- //cin >> UklRown;
-    //cout << M2<<endl;
+  UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
+    Wektor Wx;
+    Wektor Wbledu;
 
-    //cout << UklRown << endl;
+    cout << endl << "Start programu " << endl << endl;
+    cin >> UklRown;
+    cout <<endl<< UklRown;
 
     cout << "Rozwiazanie x = (x1, x2, x3):" << endl;
-    cout << UklRown.Oblicz() << endl;
+    Wx = UklRown.Oblicz();
+    cout << Wx << endl;
 
-  return 0;
+    Wbledu = UklRown.get_A().transpozycja() * Wx - UklRown.get_b();
+    cout << "Wektor bledu: Ax-b = " << Wbledu << endl;
+    cout << "Dlugosc wektora bledu: ||Ax-b|| = " << Wbledu.dlugosc();
+
+    return 0;
 }
 

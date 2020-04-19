@@ -104,5 +104,6 @@ double Wektor::dlugosc() const {
     for (int i = 0; i < ROZMIAR; i++)
         Wynik = Wynik + dane[i] * dane[i];
 
+    Wynik = sqrt(Wynik);
     return Wynik;
 }

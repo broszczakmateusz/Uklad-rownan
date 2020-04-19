@@ -13,19 +13,16 @@ std::istream &operator>>(std::istream &Strm, UkladRownanLiniowych &UklRown) {
 
     Strm >> tmpA;
     Strm >> tmpb;
-    UklRown.set_A(tmpA.transpozycja());
+    UklRown.set_A(tmpA);
     UklRown.set_b(tmpb);
     return Strm;
 }
 
 std::ostream &operator<<(std::ostream &Strm, const UkladRownanLiniowych &UklRown) {
     Strm << "Macierz A^T: " << std::endl;
-    Strm << UklRown.get_A()<<
-    Strm << "Wektor wyrazów wolnych b:" << endl;
-    Strm << UklRown.get_b() << std::endl<< std::endl;
-
-
-    Strm << UklRown.get_b();
+    Strm << UklRown.get_A() << std::endl;
+    Strm << "Wektor wyrazów wolnych b:" << std::endl;
+    Strm << UklRown.get_b() << std::endl << std::endl;
     return Strm;
 }
 
