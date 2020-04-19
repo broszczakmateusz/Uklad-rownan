@@ -4,22 +4,14 @@
 
 using namespace std;
 
-/*
- * Tu definiujemy pozostale funkcje.
- * Lepiej jednak stworzyc dodatkowy modul
- * i tam je umiescic. Ten przyklad pokazuje
- * jedynie absolutne minimum.
- */
-
-
 int main()
-{/* Wektor W1(2,1,1);
+{ /*Wektor W1(0,1,1);
   Wektor W2(2,2,3);
-  Wektor W3(1 ,1.5,1);
+  Wektor W3(2 ,2,3);
   Wektor W4(9,8.5,8);
   Macierz M1(W1,W2,W3);*/
 
-  UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
+  UkladRownanLiniowych   UklRown;
     Wektor Wx;
     Wektor Wbledu;
 
@@ -37,4 +29,3 @@ int main()
 
     return 0;
 }
-

@@ -1,12 +1,5 @@
 #include "UkladRownanLiniowych.hh"
 
-
-/*
- *  Tutaj nalezy zdefiniowac odpowiednie metody
- *  klasy UkladRownanLiniowych, ktore zawieraja 
- *  wiecej kodu niz dwie linijki.
- *  Mniejsze metody mozna definiwac w ciele klasy.
- */
 std::istream &operator>>(std::istream &Strm, UkladRownanLiniowych &UklRown) {
     Macierz tmpA;
     Wektor tmpb;
@@ -36,10 +29,6 @@ const Wektor &UkladRownanLiniowych::get_b() const {
     return b;
 }
 
-const Wektor &UkladRownanLiniowych::get_rozwiazanie() const {
-    return rozwiazanie;
-}
-
 void UkladRownanLiniowych::set_A(const Macierz &AA) {
     A=AA;
 }
@@ -47,14 +36,13 @@ void UkladRownanLiniowych::set_A(const Macierz &AA) {
 void UkladRownanLiniowych::set_b(const Wektor &bb) {
     b=bb;
 }
-void UkladRownanLiniowych::set_rozwiazanie(const Wektor &Wynik) {
-    rozwiazanie= Wynik;
-}
 
 /*###########################################################*/
-//usunac transpozycje przy tmpA!!!!!11!
+/* Rozwiazuje uklad rownan liniowych 3x3. (Dla innego rozmiaru nie bedzie daialac poprawnie)
+ * Transponuje wejsciowa macierz i dziala na macierzy tranposnowanej do wejsciowej.
+ * Zwraca wektor rozwiazan ukladu.
+*/
 Wektor UkladRownanLiniowych::Oblicz() const {
-    UkladRownanLiniowych UklWynikowy;
     Macierz  tmpA = get_A().transpozycja();
     Wektor tmpb = get_b();
 
@@ -90,10 +78,6 @@ Wektor UkladRownanLiniowych::Oblicz() const {
             }
         }
     }
-    UklWynikowy.set_A(tmpA.transpozycja());
-    UklWynikowy.set_b(tmpb);
-    UklWynikowy.set_rozwiazanie(Wynik);
-
     return Wynik;
 }
 

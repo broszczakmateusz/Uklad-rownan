@@ -1,13 +1,6 @@
 #include "Wektor.hh"
 #include <iostream>
 
-
-/*
- *  Tutaj nalezy zdefiniowac odpowiednie metody
- *  klasy Wektor, ktore zawieraja wiecej kodu
- *  niz dwie linijki.
- *  Mniejsze metody mozna definiwac w ciele klasy.
- */
 Wektor::Wektor() {
     for (int i = 0; i < ROZMIAR; i++) {
         Wektor::dane[i] = 0;
@@ -15,7 +8,6 @@ Wektor::Wektor() {
 }
 
 Wektor::Wektor(double x, double y, double z) {
-
     Wektor::dane[0] = x;
     Wektor::dane[1] = y;
     Wektor::dane[2] = z;
@@ -104,6 +96,5 @@ double Wektor::dlugosc() const {
     for (int i = 0; i < ROZMIAR; i++)
         Wynik = Wynik + dane[i] * dane[i];
 
-    Wynik = sqrt(Wynik);
-    return Wynik;
+    return sqrt(Wynik);
 }

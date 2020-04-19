@@ -6,18 +6,15 @@
 #include "Wektor.hh"
 
 
-/*
- *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
- *  i jakie ma glowne cechy.
+/* KLasa modeluje pojecie ukladu rownan, sklada sie z:
+ *  - macierzy kwadratowej wspolczynnikow stojacych przy x_n
+ *  - wektora wyrazow wolnych
  */
 class UkladRownanLiniowych {
 
     Macierz A;
     Wektor b;
-    Wektor rozwiazanie;
-  /*
-   *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
-   */
+
   public:
     UkladRownanLiniowych() {};
     UkladRownanLiniowych(Macierz AA, Wektor bb) : A(AA), b(bb) {};
@@ -26,10 +23,8 @@ class UkladRownanLiniowych {
     const Wektor & get_b() const;
     void set_A(const Macierz & AA);
     void set_b(const Wektor & bb);
-    void set_rozwiazanie(const Wektor & Wynik);
-    const Wektor & get_rozwiazanie() const;
-    Wektor Oblicz() const;
 
+    Wektor Oblicz() const;
 };
 
 
